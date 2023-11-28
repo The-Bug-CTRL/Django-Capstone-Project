@@ -1,0 +1,120 @@
+<!-- candidate/templates/candidate/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #343a40; /* Dark background color */
+            color: #ffffff; /* Light text color */
+        }
+
+        .home-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Style the images and add animation */
+        .image-container {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: space-around; /* Distribute items evenly along the main axis */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            margin-top: 30px;
+        }
+
+        .image-container img {
+            width: 200px; /* Set your preferred width */
+            height: 200px; /* Set your preferred height */
+            transition: transform 0.5s; /* Add a transition for a smooth effect on hover */
+        }
+
+        .image-container img:hover {
+            transform: translateY(-10px); /* Move the image up on hover */
+        }
+
+        /* Style the logout button */
+        .btn-logout {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Style the image buttons */
+        .img-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            transition: transform 0.3s; /* Add a transition for a smooth effect on hover */
+        }
+
+        .img-btn:hover {
+            transform: scale(1.1); /* Scale the button up on hover */
+        }
+
+        /* Style the paragraph container */
+        .paragraph-container {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container home-container">
+    <h1>Welcome to the Presidential Voting page, where you can select who you want to Vote for!</h1>
+
+    <!-- Logout Button -->
+    <a href="{% url 'logout' %}" class="btn btn-danger btn-logout">Logout</a>
+
+    <!-- Image Buttons and Paragraphs -->
+    <div class="image-container">
+        <div>
+            <a href="{% url 'page1' %}" class="img-btn">
+                <img src="{% static 'images/img.png' %}" alt="Image 1">
+            </a>
+            <p>Donald J Trump.</p>
+            <p>Click his image</p>
+            <p>to view his details</p>
+            <p>and to vote for him or not!</p>
+        </div>
+
+        <div>
+            <a href="{% url 'page2' %}" class="img-btn">
+                <img src="{% static 'images/img_1.png' %}" alt="Image 2">
+            </a>
+            <p>Ye West.</p>
+            <p>Click his image</p>
+            <p>to view his details</p>
+            <p>and to vote for him or not!</p>
+        </div>
+
+        <div>
+            <a href="{% url 'page3' %}" class="img-btn">
+                <img src="{% static 'images/img_2.png' %}" alt="Image 3">
+            </a>
+             <p>Ron Desantis.</p>
+            <p>Click his image</p>
+            <p>to view his details</p>
+            <p>and to vote for him or not!</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS scripts (optional, but needed for some Bootstrap features) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
